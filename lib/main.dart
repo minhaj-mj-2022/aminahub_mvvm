@@ -1,4 +1,4 @@
-import 'package:aminahub/screens/home_screen/home_scrn.dart';
+import 'package:aminahub/screen/home_screen/home_scrn.dart';
 import 'package:flutter/material.dart';
 
 void main() {
