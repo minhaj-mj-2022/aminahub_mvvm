@@ -12,6 +12,8 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
+  provider: ^6.1.1
+  easy_rich_text: ^2.1.0
 
 dev_dependencies:
   flutter_test:
@@ -20,4 +22,7 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+  - assets/images/
+  - assets/icons/
 

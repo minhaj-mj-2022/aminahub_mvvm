@@ -1,22 +1,28 @@
-import 'package:aminahub/screen/home_screen/home_scrn.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:aminahub/repository/splash_repo.dart';
+import 'package:aminahub/screen/splash_scrn.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+    return ChangeNotifierProvider(
+      create: (context) => SplashViewModel(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Aminahub',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+        ),
+        home: const SplashScreen(),
       ),
-      home: const HomeScreen(),
     );
   }
 }
