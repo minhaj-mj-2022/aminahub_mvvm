@@ -1,3 +1,4 @@
+import 'package:aminahub/utils/routes.dart';
 import 'package:aminahub/utils/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -20,10 +21,13 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Aminahub',
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
           useMaterial3: true,
         ),
         home: const SplashScreen(),
+        initialRoute:
+            AppRoutes.splashScreen, // or any other initial route you prefer
+        routes: AppRoutes.routes,
       ),
     );
   }

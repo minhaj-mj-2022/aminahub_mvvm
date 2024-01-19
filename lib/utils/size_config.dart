@@ -16,6 +16,10 @@ double getSrnWidth(double adjust) {
   return (adjust / 812.0) * SizeConfig.srnWidth;
 }
 
+double getOrgSrnWidth() {
+  return SizeConfig.srnWidth;
+}
+
 double getSrnHeight(double adjust) {
   return (adjust / 375.0) * SizeConfig.srnHeight;
 }

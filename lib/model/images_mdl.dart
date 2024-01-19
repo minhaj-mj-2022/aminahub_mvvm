@@ -7,7 +7,7 @@ class ImagesModel {
   static const String horizontalLogo = '${_imagesPath}horizontal_logo.png';
   static const String verticalLogo = '${_imagesPath}aminahub_vertical.png';
 
-  // static const String icon1 = '${_imagesPath}icon1.svg';
+  static const String selectLocation = '${_iconPath}select_location.png';
   // static const String icon2 = '${_imagesPath}icon2.svg';
   // static const String icon3 = '${_imagesPath}icon3.svg';
   // static const String icon4 = '${_imagesPath}icon4.svg';

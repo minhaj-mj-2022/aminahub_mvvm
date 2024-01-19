@@ -1,4 +1,6 @@
 import 'package:aminahub/model/images_mdl.dart';
+import 'package:aminahub/screen/home_screen/home_scrn.dart';
+import 'package:aminahub/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:aminahub/repository/splash_repo.dart';
@@ -8,7 +10,7 @@ import 'package:aminahub/utils/theme.dart';
 import 'package:aminahub/widgets/splash_widgs.dart';
 
 class SplashScreen extends StatelessWidget {
-  static String routeName = "/splash";
+  static String routeName = "/splashScreen";
 
   const SplashScreen({Key? key}) : super(key: key);
 
@@ -73,7 +75,9 @@ class SplashScreen extends StatelessWidget {
                         const Spacer(flex: 3),
                         PrimaryBtn(
                           btnText: "Continue",
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, AppRoutes.homeScreen);
+                          },
                         ),
                         const Spacer(),
                       ],
