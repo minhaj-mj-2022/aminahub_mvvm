@@ -14,32 +14,26 @@ class _AppBarsState extends State<HomeScreenAppBars> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: getSrnHeight(62),
+        height: getSrnHeight(45),
         width: getOrgSrnWidth(),
         decoration: const BoxDecoration(
-            borderRadius: BorderRadius.all(
-              Radius.circular(15),
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(25),
+              bottomRight: Radius.circular(25),
             ),
             color: AppColors.splashBackground),
         child: Column(
           children: <Widget>[
             SizedBox(
-              height: getSrnHeight(20),
+              height: getSrnHeight(22.5),
             ),
             Image.asset(
               ImagesModel.splashLogo,
-              height: getSrnWidth(100),
-              width: getSrnHeight(100),
+              height: getSrnWidth(80),
+              width: getSrnHeight(80),
             ),
             SizedBox(
               height: getSrnHeight(3),
-            ),
-            const Text(
-              "Dhaka, Bangladesh",
-              style: TextStyle(
-                  color: AppColors.textWhite,
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold),
             ),
           ],
         ));
