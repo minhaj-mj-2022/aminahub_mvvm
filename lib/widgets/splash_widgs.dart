@@ -18,7 +18,7 @@ class SplashContent extends StatelessWidget {
         Image.asset(
           logo!,
           height: (60),
-          width: (190),
+          width: (200),
         ),
         SizedBox(
           width: 200,

@@ -1,3 +1,4 @@
+import 'package:aminahub/utils/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:aminahub/repository/splash_repo.dart';
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return ChangeNotifierProvider(
       create: (context) => SplashViewModel(),
       child: MaterialApp(
