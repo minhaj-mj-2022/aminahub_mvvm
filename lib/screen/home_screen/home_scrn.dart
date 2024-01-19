@@ -1,4 +1,7 @@
+import 'package:aminahub/screen/home_screen/components/search.dart';
+import 'package:aminahub/screen/home_screen/components/user_location.dart';
 import 'package:aminahub/utils/app_bar.dart';
+import 'package:aminahub/utils/size_config.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -18,7 +21,14 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           children: <Widget>[
             const HomeScreenAppBars(),
-            Container(),
+            SizedBox(
+              height: getSrnHeight(2),
+            ),
+            const UserLocation(),
+            SizedBox(
+              height: getSrnHeight(2),
+            ),
+            SearchField()
           ],
         ),
       ),
