@@ -1,3 +1,4 @@
+import 'package:aminahub/screen/home_screen/components/ads_category.dart';
 import 'package:aminahub/screen/home_screen/components/search.dart';
 import 'package:aminahub/screen/home_screen/components/user_location.dart';
 import 'package:aminahub/utils/app_bar.dart';
@@ -26,9 +27,13 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             const UserLocation(),
             SizedBox(
-              height: getSrnHeight(2),
+              height: getSrnHeight(10),
             ),
-            SearchField()
+            AdsCategory(),
+            SizedBox(
+              height: getSrnHeight(12),
+            ),
+            SearchField(),
           ],
         ),
       ),

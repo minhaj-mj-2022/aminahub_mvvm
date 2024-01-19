@@ -18,8 +18,8 @@ class _AppBarsState extends State<HomeScreenAppBars> {
         width: getOrgSrnWidth(),
         decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(25),
-              bottomRight: Radius.circular(25),
+              bottomLeft: Radius.circular(18),
+              bottomRight: Radius.circular(18),
             ),
             color: AppColors.splashBackground),
         child: Column(
