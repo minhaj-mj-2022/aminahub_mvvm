@@ -15,7 +15,7 @@ class PrimaryBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: getSrnWidth(600),
+      width: getSrnWidth(680),
       height: getSrnHeight(25),
       child: TextButton(
           style: TextButton.styleFrom(

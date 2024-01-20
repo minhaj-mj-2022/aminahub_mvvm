@@ -15,7 +15,7 @@ class _UserLocationState extends State<UserLocation> {
       padding: EdgeInsets.symmetric(horizontal: getSrnWidth(40)),
       child: SizedBox(
         child: Text(
-          "Dhaka, Bangladesh",
+          "California, USA",
           style: TextStyle(
               fontSize: getSrnHeight(10), fontWeight: FontWeight.bold),
         ),

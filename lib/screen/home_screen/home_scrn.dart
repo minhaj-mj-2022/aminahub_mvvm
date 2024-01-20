@@ -1,7 +1,10 @@
 import 'package:aminahub/screen/home_screen/components/ads_category.dart';
 import 'package:aminahub/screen/home_screen/components/search.dart';
+import 'package:aminahub/screen/home_screen/components/section_title.dart';
+import 'package:aminahub/screen/home_screen/components/special_carousals.dart';
 import 'package:aminahub/screen/home_screen/components/user_location.dart';
 import 'package:aminahub/utils/app_bar.dart';
+import 'package:aminahub/utils/buttons.dart';
 import 'package:aminahub/utils/size_config.dart';
 import 'package:flutter/material.dart';
 
@@ -27,13 +30,36 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             const UserLocation(),
             SizedBox(
-              height: getSrnHeight(10),
+              height: getSrnHeight(6),
             ),
-            AdsCategory(),
+            const SearchField(),
             SizedBox(
               height: getSrnHeight(12),
             ),
-            SearchField(),
+            const AdsCategory(),
+            SizedBox(
+              height: getSrnHeight(10),
+            ),
+            SectionTitle(
+              press: () {},
+              title: 'Best Deals for you',
+            ),
+            const SpecialSection(),
+            SizedBox(
+              height: getSrnHeight(10),
+            ),
+            SectionTitle(
+              press: () {},
+              title: 'Special For you',
+            ),
+            const SpecialSection(),
+            SizedBox(
+              height: getSrnHeight(10),
+            ),
+            PrimaryBtn(btnText: "View all Ads", onPressed: () {}),
+            SizedBox(
+              height: getSrnHeight(10),
+            ),
           ],
         ),
       ),
