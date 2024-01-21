@@ -1,5 +1,4 @@
 import 'package:aminahub/model/images_mdl.dart';
-import 'package:aminahub/screen/home_screen/home_scrn.dart';
 import 'package:aminahub/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

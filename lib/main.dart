@@ -10,7 +10,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key});
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +25,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         home: const SplashScreen(),
-        initialRoute:
-            AppRoutes.splashScreen, // or any other initial route you prefer
+        initialRoute: AppRoutes.splashScreen,
         routes: AppRoutes.routes,
       ),
     );
