@@ -60,7 +60,7 @@ class AdDetailsScreen extends StatelessWidget {
 
             // Title
             Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8.0),
               child: Column(
                 children: [
                   const Text(
@@ -72,7 +72,7 @@ class AdDetailsScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: getSrnHeight(5),
+                    height: getSrnHeight(8),
                   ),
                   Row(
                     children: [
@@ -102,19 +102,46 @@ class AdDetailsScreen extends StatelessWidget {
                         style: TextStyle(fontSize: 17),
                       )
                     ],
+                  ),
+                  SizedBox(
+                    height: getSrnHeight(12),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: getSrnWidth(150)),
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("Ad Status"),
+                        Row(
+                          children: [
+                            Text(
+                              "Active",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            Icon(
+                              Icons.check,
+                              color: Colors.green,
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: getSrnWidth(150)),
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("Ad Category"),
+                        Text(
+                          "IT Training",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
                   )
                 ],
               ),
-            ),
-
-            ElevatedButton(
-              onPressed: () {},
-              child: const Text('Share'),
-            ),
-
-            ElevatedButton(
-              onPressed: () {},
-              child: const Text('Favorite'),
             ),
           ],
         ),
