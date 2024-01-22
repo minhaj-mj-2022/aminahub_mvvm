@@ -6,4 +6,6 @@ class AppColors {
   static const Color textWhite = Color(0xFFFFFFFF);
   static const Color screenBackground = Color(0xFFFFFFFF);
   static const Color btnBackgroundColor2 = Color(0xFFB2DFDB);
+  static const Color navBtnActiveColor = Color(0xFF5E3CC4);
+  static const Color navBtnInactiveColor = Color(0xFFB6B6B6);
 }
