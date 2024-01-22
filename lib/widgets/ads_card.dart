@@ -3,13 +3,15 @@ import 'package:flutter/material.dart';
 
 class AdsCardView extends StatefulWidget {
   final String title, imageUrl;
-  final double cardWidth, imgAspectRatio;
+  final double cardWidth, imgAspectRatio, leftMargin;
+
   const AdsCardView(
       {super.key,
       required this.title,
       required this.imageUrl,
       required this.cardWidth,
-      required this.imgAspectRatio});
+      required this.imgAspectRatio,
+      required this.leftMargin});
 
   @override
   State<AdsCardView> createState() => _AdsCardViewState();
@@ -20,7 +22,9 @@ class _AdsCardViewState extends State<AdsCardView> {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-          left: getSrnWidth(25), top: getSrnHeight(3), bottom: getSrnHeight(6)),
+          left: getSrnWidth(widget.leftMargin),
+          top: getSrnHeight(1),
+          bottom: getSrnHeight(6)),
       child: Container(
         width: getSrnWidth(widget.cardWidth),
         padding: const EdgeInsets.all(2),

@@ -1,22 +1,37 @@
+import 'package:aminahub/utils/buttons.dart';
 import 'package:aminahub/utils/size_config.dart';
-import 'package:aminahub/utils/theme.dart';
 import 'package:flutter/material.dart';
 
 class AdDetailsScreen extends StatelessWidget {
   final String title;
   final String imageUrl;
+  final String adsCategory;
 
   const AdDetailsScreen({
     super.key,
     required this.title,
     required this.imageUrl,
+    required this.adsCategory,
   });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Ad Details'),
+        title: const Text('Ad title'),
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(
+              Icons.bookmark,
+              size: 30,
+            ),
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: const Icon(Icons.share),
+            onPressed: () {},
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -29,40 +44,34 @@ class AdDetailsScreen extends StatelessWidget {
               ),
               width: double.infinity,
               height: 200,
-              child: Container(
-                margin: EdgeInsets.only(
-                    left: getSrnWidth(570),
-                    right: getSrnWidth(10),
-                    top: getSrnHeight(2),
-                    bottom: getSrnHeight(72)),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: AppColors.btnBackgroundColor2,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    const IconButton(
-                        onPressed: null,
-                        icon: Icon(
-                          Icons.bookmark,
-                        )),
-                    Text(
-                      "|",
-                      style: TextStyle(fontSize: getSrnHeight(10)),
-                    ),
-                    const IconButton(
-                        onPressed: null, icon: Icon(Icons.share_rounded))
-                  ],
-                ),
-              ),
             ),
-
-            // Title
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      SecondaryBtn(
+                        btnText: 'Call',
+                        onPressed: () {},
+                        iconData: Icons.call,
+                      ),
+                      SecondaryBtn(
+                        btnText: 'Chat',
+                        onPressed: () {},
+                        iconData: Icons.chat,
+                      ),
+                      SecondaryBtn(
+                        btnText: 'Mail',
+                        onPressed: () {},
+                        iconData: Icons.mail,
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: getSrnHeight(5),
+                  ),
                   const Text(
                     "Unleash the Excitement: Join Us for an Unforgettable Experience!",
                     maxLines: 3,
@@ -108,17 +117,18 @@ class AdDetailsScreen extends StatelessWidget {
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: getSrnWidth(150)),
-                    child: const Row(
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("Ad Status"),
+                        const Text("Ad Status"),
                         Row(
                           children: [
-                            Text(
+                            const Text(
                               "Active",
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
-                            Icon(
+                            SizedBox(width: getSrnWidth(8)),
+                            const Icon(
                               Icons.check,
                               color: Colors.green,
                             )
@@ -139,7 +149,17 @@ class AdDetailsScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                  )
+                  ),
+                  SizedBox(
+                    height: getSrnHeight(10),
+                  ),
+                  const Text(
+                    "Ad Description:",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  const Text(
+                    "demo Descriptions",
+                  ),
                 ],
               ),
             ),

@@ -32,13 +32,13 @@ class _ListViweCardState extends State<ListViweCard> {
           final ad = widget.demoAdsView[index];
           return GestureDetector(
             onTap: () {
-              // Navigate to the ad details screen when the card is tapped
               Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => AdDetailsScreen(
-                    title: ad['title'],
                     imageUrl: ad['imageUrl'],
+                    title: ad['title'],
+                    adsCategory: ad['adCategory'],
                   ),
                 ),
               );
@@ -48,6 +48,7 @@ class _ListViweCardState extends State<ListViweCard> {
               imageUrl: ad['imageUrl'],
               cardWidth: widget.cardWidth,
               imgAspectRatio: widget.imgAspectRatio,
+              leftMargin: 25,
             ),
           );
         },

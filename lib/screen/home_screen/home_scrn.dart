@@ -5,6 +5,7 @@ import 'package:aminahub/screen/home_screen/components/Ads_card_section.dart';
 import 'package:aminahub/screen/home_screen/components/user_location.dart';
 import 'package:aminahub/utils/app_bar.dart';
 import 'package:aminahub/utils/buttons.dart';
+import 'package:aminahub/utils/routes.dart';
 import 'package:aminahub/utils/size_config.dart';
 import 'package:flutter/material.dart';
 
@@ -40,11 +41,11 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(
               height: getSrnHeight(10),
             ),
-            SectionTitle(
+            SpecialSectionTitle(
               press: () {},
               title: 'Best Deals for you',
             ),
-            AdsCardSection(
+            AdsCardSectionListView(
               cardHeight: getSrnHeight(58),
               cardWidth: getSrnWidth(1500),
               imgAspectRatio: 10 / 6,
@@ -52,11 +53,11 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(
               height: getSrnHeight(10),
             ),
-            SectionTitle(
+            SpecialSectionTitle(
               press: () {},
               title: 'Special For you',
             ),
-            AdsCardSection(
+            AdsCardSectionListView(
               cardHeight: getSrnHeight(58),
               cardWidth: getSrnWidth(1500),
               imgAspectRatio: 10 / 6,
@@ -65,7 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
               press: () {},
               title: 'IT Training',
             ),
-            AdsCardSection(
+            AdsCardSectionListView(
               cardHeight: getSrnHeight(72),
               cardWidth: getSrnWidth(800),
               imgAspectRatio: 10 / 16,
@@ -73,7 +74,11 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(
               height: getSrnHeight(10),
             ),
-            PrimaryBtn(btnText: "View all Ads", onPressed: () {}),
+            PrimaryBtn(
+                btnText: "View all Ads",
+                onPressed: () {
+                  Navigator.pushNamed(context, AppRoutes.viewAllAdsScreen);
+                }),
             SizedBox(
               height: getSrnHeight(10),
             ),

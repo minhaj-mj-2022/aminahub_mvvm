@@ -30,3 +30,37 @@ class PrimaryBtn extends StatelessWidget {
     );
   }
 }
+
+class SecondaryBtn extends StatelessWidget {
+  final String btnText;
+  final VoidCallback onPressed;
+  final IconData iconData;
+
+  const SecondaryBtn({
+    super.key,
+    required this.btnText,
+    required this.onPressed,
+    required this.iconData,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      child: ElevatedButton.icon(
+        onPressed: () {},
+        icon: Icon(
+          iconData,
+          color: AppColors.textWhite,
+        ),
+        label: Text(
+          btnText,
+          style: const TextStyle(color: AppColors.textWhite, fontSize: 16),
+        ),
+        style: ElevatedButton.styleFrom(
+            backgroundColor: AppColors.btnBackgroundColor,
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))),
+      ),
+    );
+  }
+}
