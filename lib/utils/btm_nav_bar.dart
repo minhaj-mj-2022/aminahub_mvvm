@@ -1,4 +1,5 @@
 import 'package:aminahub/screen/home_screen/home_scrn.dart';
+import 'package:aminahub/screen/user_account_screen/user_acc_scrn.dart';
 import 'package:aminahub/screen/user_bookmarks_screen/bookmark_scrn.dart';
 import 'package:aminahub/utils/enums.dart';
 import 'package:aminahub/utils/size_config.dart';
@@ -49,15 +50,16 @@ class CustomBottomNavBar extends StatelessWidget {
                 },
               ),
               IconButton(
-                  icon: SvgPicture.asset(
-                    "assets/icons/User Icon.svg",
-                    color: MenuState.profile == selectedMenu
-                        ? AppColors.navBtnActiveColor
-                        : AppColors.navBtnInactiveColor,
-                  ),
-                  onPressed: () {} //=>
-                  // Navigator.pushNamed(context, ProfileScreen.routeName),
-                  ),
+                icon: SvgPicture.asset(
+                  "assets/icons/User Icon.svg",
+                  color: MenuState.profile == selectedMenu
+                      ? AppColors.navBtnActiveColor
+                      : AppColors.navBtnInactiveColor,
+                ),
+                onPressed: () {
+                  Navigator.pushNamed(context, UserAccountScreen.routeName);
+                },
+              ),
             ],
           )),
     );

@@ -1,3 +1,8 @@
+import 'package:aminahub/screen/user_account_screen/components/help_center.dart';
+import 'package:aminahub/screen/user_account_screen/components/my_account.dart';
+import 'package:aminahub/screen/user_account_screen/components/my_ads.dart';
+import 'package:aminahub/screen/user_account_screen/components/upload.dart';
+import 'package:aminahub/screen/user_account_screen/user_acc_scrn.dart';
 import 'package:aminahub/screen/user_bookmarks_screen/bookmark_scrn.dart';
 import 'package:aminahub/screen/view_all_ads/all_ads.dart';
 import 'package:aminahub/screen/home_screen/home_scrn.dart';
@@ -9,6 +14,11 @@ class AppRoutes {
   static const String homeScreen = '/HomeScreen';
   static const String viewAllAdsScreen = '/ViewAllAdsScreen';
   static const String viewBookmarkScreen = '/ViewBookmarkScreen';
+  static const String userAccountScreen = '/UserAccountScreen';
+  static const String userAccountInfo = '/UserAccountInfo';
+  static const String userUploadedAds = '/UserUploadedAds';
+  static const String userUploadAds = '/UserUploadAds';
+  static const String helpCenter = '/HelpCenter';
 
   static WidgetBuilder getRouteBuilder(String routeName) {
     switch (routeName) {
@@ -20,6 +30,16 @@ class AppRoutes {
         return (_) => const ViewAllAdsScreen();
       case viewBookmarkScreen:
         return (_) => const ViewBookmarkScreen();
+      case userAccountScreen:
+        return (_) => const UserAccountScreen();
+      case userAccountInfo:
+        return (_) => const UserAccountInfo();
+      case userUploadedAds:
+        return (_) => const UserUploadedAds();
+      case userUploadAds:
+        return (_) => const UserUploadAds();
+      case helpCenter:
+        return (_) => const HelpCenter();
       default:
         return (_) {
           return Container(
@@ -37,5 +57,10 @@ class AppRoutes {
     homeScreen: getRouteBuilder(homeScreen),
     viewAllAdsScreen: getRouteBuilder(viewAllAdsScreen),
     viewBookmarkScreen: getRouteBuilder(viewBookmarkScreen),
+    userAccountScreen: getRouteBuilder(userAccountScreen),
+    userAccountInfo: getRouteBuilder(userAccountInfo),
+    userUploadedAds: getRouteBuilder(userUploadedAds),
+    userUploadAds: getRouteBuilder(userUploadAds),
+    helpCenter: getRouteBuilder(helpCenter),
   };
 }
