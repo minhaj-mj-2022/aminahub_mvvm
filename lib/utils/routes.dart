@@ -1,12 +1,13 @@
-import 'package:aminahub/screen/user_account_screen/components/help_center.dart';
-import 'package:aminahub/screen/user_account_screen/components/my_account.dart';
-import 'package:aminahub/screen/user_account_screen/components/my_ads.dart';
-import 'package:aminahub/screen/user_account_screen/components/upload.dart';
-import 'package:aminahub/screen/user_account_screen/user_acc_scrn.dart';
-import 'package:aminahub/screen/user_bookmarks_screen/bookmark_scrn.dart';
-import 'package:aminahub/screen/view_all_ads/all_ads.dart';
-import 'package:aminahub/screen/home_screen/home_scrn.dart';
-import 'package:aminahub/screen/splash_scrn.dart';
+import 'package:aminahub/view/home_screen/components/select_location.dart';
+import 'package:aminahub/view/user_account_screen/components/help_center.dart';
+import 'package:aminahub/view/user_account_screen/components/my_account.dart';
+import 'package:aminahub/view/user_account_screen/components/my_ads.dart';
+import 'package:aminahub/view/user_account_screen/components/upload.dart';
+import 'package:aminahub/view/user_account_screen/user_acc_scrn.dart';
+import 'package:aminahub/view/user_bookmarks_screen/bookmark_scrn.dart';
+import 'package:aminahub/view/view_all_ads/all_ads.dart';
+import 'package:aminahub/view/home_screen/home_scrn.dart';
+import 'package:aminahub/view/splash_scrn.dart';
 import 'package:flutter/material.dart';
 
 class AppRoutes {
@@ -19,6 +20,7 @@ class AppRoutes {
   static const String userUploadedAds = '/UserUploadedAds';
   static const String userUploadAds = '/UserUploadAds';
   static const String helpCenter = '/HelpCenter';
+  static const String selectLocation = '/SelectLocation';
 
   static WidgetBuilder getRouteBuilder(String routeName) {
     switch (routeName) {
@@ -37,9 +39,11 @@ class AppRoutes {
       case userUploadedAds:
         return (_) => const UserUploadedAds();
       case userUploadAds:
-        return (_) => const UserUploadAds();
+        return (_) => const UserUploadAdsView();
       case helpCenter:
         return (_) => const HelpCenter();
+      case selectLocation:
+        return (_) => SelectLocation();
       default:
         return (_) {
           return Container(
@@ -62,5 +66,6 @@ class AppRoutes {
     userUploadedAds: getRouteBuilder(userUploadedAds),
     userUploadAds: getRouteBuilder(userUploadAds),
     helpCenter: getRouteBuilder(helpCenter),
+    selectLocation: getRouteBuilder(selectLocation),
   };
 }

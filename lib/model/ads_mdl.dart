@@ -1,27 +1,27 @@
-import 'package:aminahub/model/images_mdl.dart';
+class AdsModel {
+  final String id,
+      title,
+      locationState,
+      description,
+      contactInfo,
+      price,
+      timePosted,
+      category,
+      originalPoster;
+  final bool isActive;
+  final List<String> images;
 
-class DemoAd {
-  final String title;
-  final String adCategory;
-  final String imageUrl;
-
-  DemoAd(this.adCategory, {required this.title, required this.imageUrl});
+  AdsModel({
+    required this.id,
+    required this.isActive,
+    required this.category,
+    required this.images,
+    required this.title,
+    required this.timePosted,
+    required this.locationState,
+    required this.price,
+    required this.description,
+    required this.contactInfo,
+    required this.originalPoster,
+  });
 }
-
-final List<Map<String, dynamic>> demoAds = [
-  {
-    'title': 'Ad 1 \n test',
-    'imageUrl': ImagesModel.testImage,
-    'adCategory': 'IT Training'
-  },
-  {
-    'title': 'Ad 2',
-    'imageUrl': ImagesModel.testImageVrtcl,
-    'adCategory': 'IT Training'
-  },
-  {
-    'title': 'Ad 3',
-    'imageUrl': ImagesModel.testImageVrtcl,
-    'adCategory': 'IT Training'
-  },
-];

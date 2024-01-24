@@ -1,11 +1,16 @@
+import 'package:aminahub/firebase_options.dart';
 import 'package:aminahub/utils/routes.dart';
 import 'package:aminahub/utils/size_config.dart';
+import 'package:aminahub/view_model/splash_view_mdl.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:aminahub/repository/splash_repo.dart';
-import 'package:aminahub/screen/splash_scrn.dart';
+import 'package:aminahub/view/splash_scrn.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
   runApp(const MyApp());
 }
 

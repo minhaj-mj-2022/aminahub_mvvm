@@ -2,16 +2,29 @@ import 'package:aminahub/utils/size_config.dart';
 import 'package:flutter/material.dart';
 
 class AdsCardView extends StatefulWidget {
-  final String title, imageUrl;
+  final String id,
+      title,
+      locationState,
+      description,
+      contactInfo,
+      price,
+      imageUrl;
+  final bool isActive;
   final double cardWidth, imgAspectRatio, leftMargin;
 
   const AdsCardView(
       {super.key,
       required this.title,
-      required this.imageUrl,
       required this.cardWidth,
       required this.imgAspectRatio,
-      required this.leftMargin});
+      required this.leftMargin,
+      required this.id,
+      required this.locationState,
+      required this.description,
+      required this.contactInfo,
+      required this.price,
+      required this.isActive,
+      required this.imageUrl});
 
   @override
   State<AdsCardView> createState() => _AdsCardViewState();
@@ -47,7 +60,7 @@ class _AdsCardViewState extends State<AdsCardView> {
               borderRadius: BorderRadius.circular(8),
               child: AspectRatio(
                 aspectRatio: widget.imgAspectRatio,
-                child: Image.asset(
+                child: Image.network(
                   widget.imageUrl,
                   fit: BoxFit.cover,
                 ),

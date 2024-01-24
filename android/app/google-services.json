@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "556187412072",
+    "project_id": "aminahubmvvm",
+    "storage_bucket": "aminahubmvvm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:556187412072:android:aedf110ccab0a82759fddd",
+        "android_client_info": {
+          "package_name": "com.example.aminahub"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSWD48a7cW-gTUZB-St_lOnFr3BFPd_SE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,6 +1,6 @@
-import 'package:aminahub/screen/home_screen/home_scrn.dart';
-import 'package:aminahub/screen/user_account_screen/user_acc_scrn.dart';
-import 'package:aminahub/screen/user_bookmarks_screen/bookmark_scrn.dart';
+import 'package:aminahub/view/home_screen/home_scrn.dart';
+import 'package:aminahub/view/user_account_screen/user_acc_scrn.dart';
+import 'package:aminahub/view/user_bookmarks_screen/bookmark_scrn.dart';
 import 'package:aminahub/utils/enums.dart';
 import 'package:aminahub/utils/size_config.dart';
 import 'package:aminahub/utils/theme.dart';

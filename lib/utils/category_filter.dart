@@ -1,3 +1,4 @@
+import 'package:aminahub/utils/constant.dart';
 import 'package:flutter/material.dart';
 
 class CategoryFilter extends StatefulWidget {
@@ -9,22 +10,7 @@ class CategoryFilter extends StatefulWidget {
 
 class _CategoryFilterState extends State<CategoryFilter> {
   String selectedCategory = 'All Categories';
-  String selectedOption = 'Latest'; // Added for the second dropdown
-  final List<String> categories = [
-    'All Categories',
-    'Property',
-    'Events',
-    'IT Training',
-    'Rentals',
-    'Services',
-    'travel',
-    'buySell',
-    'homeservices',
-    'lawyer',
-    'roommates',
-  ];
-
-  final List<String> options = ['Latest', 'Oldest', 'Trending'];
+  String selectedOption = 'Latest';
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +26,8 @@ class _CategoryFilterState extends State<CategoryFilter> {
                   selectedCategory = newValue!;
                 });
               },
-              items: categories.map<DropdownMenuItem<String>>((String value) {
+              items: constAdSategories
+                  .map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
                   child: Text(
@@ -60,7 +47,8 @@ class _CategoryFilterState extends State<CategoryFilter> {
                   selectedOption = newValue!;
                 });
               },
-              items: options.map<DropdownMenuItem<String>>((String value) {
+              items: constFilterOptions
+                  .map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
                   child: Text(
