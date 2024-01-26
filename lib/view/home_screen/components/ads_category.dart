@@ -61,6 +61,7 @@
 // ads_category.dart
 import 'package:aminahub/model/images_mdl.dart';
 import 'package:aminahub/utils/size_config.dart';
+import 'package:aminahub/utils/theme.dart';
 import 'package:aminahub/view/view_all_ads/all_ads.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -116,6 +117,7 @@ class AdsCategory extends StatelessWidget {
           child: SvgPicture.asset(
             imagePath,
             height: getSrnHeight(24),
+            colorFilter: const ColorFilter.mode(Colors.black, BlendMode.srcIn),
           ),
         ),
         SizedBox(height: getSrnHeight(4)),
