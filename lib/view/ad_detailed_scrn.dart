@@ -1,6 +1,5 @@
 import 'package:aminahub/utils/buttons.dart';
 import 'package:aminahub/utils/size_config.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class AdDetailsScreen extends StatelessWidget {

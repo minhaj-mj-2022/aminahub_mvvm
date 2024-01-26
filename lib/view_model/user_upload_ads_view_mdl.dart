@@ -2,7 +2,6 @@ import 'package:aminahub/view/user_account_screen/components/upload.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:uuid/uuid.dart';
 import 'dart:io';
@@ -58,11 +57,9 @@ class UserUploadAdsViewModel {
   void uploadData(BuildContext context) async {
     if (areFieldsFilled()) {
       String adsId = generateUuid();
-      print(adsId);
 
       if (selectedCategory != null && selectedCategory!.isNotEmpty) {
         await uploadImages(adsId);
-        print(selectedCategory);
         await FirebaseFirestore.instance.collection('ads').add({
           'ads_id': adsId,
           'isActive': true,
@@ -75,6 +72,8 @@ class UserUploadAdsViewModel {
           'price': priceController.text,
           'originalPoster': FirebaseAuth.instance.currentUser?.email,
           'time_posted': DateTime.now().toString(),
+          'ad_contact_number': "880",
+          'ad_gmail': "hold@aminahub.com",
         });
 
         imageUrls = [];
@@ -84,18 +83,12 @@ class UserUploadAdsViewModel {
               content: Text('Upload successful'),
             ),
           );
-        } else {
-          print('Upload failed');
         }
 
         await Future.delayed(const Duration(seconds: 3));
         if (context.mounted) {
           Navigator.of(context)
               .pushReplacementNamed(UserUploadAdsView.routeName);
-        }
-      } else {
-        if (kDebugMode) {
-          print('Please select a category');
         }
       }
     }

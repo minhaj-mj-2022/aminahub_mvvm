@@ -1,5 +1,3 @@
-import 'package:aminahub/model/ads_mdl.dart';
-import 'package:aminahub/view/view_all_ads/comonents/ads_card_section.dart';
 import 'package:aminahub/utils/btm_nav_bar.dart';
 import 'package:aminahub/utils/category_filter.dart';
 import 'package:aminahub/utils/enums.dart';
@@ -16,6 +14,7 @@ class ViewBookmarkScreen extends StatefulWidget {
 }
 
 class _ViewBookmarkScreenState extends State<ViewBookmarkScreen> {
+  String userCategorySelected = 'IT Training';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +23,13 @@ class _ViewBookmarkScreenState extends State<ViewBookmarkScreen> {
       ),
       body: Column(
         children: [
-          const CategoryFilter(),
+          // CategoryFilter(
+          //   onCategoryChanged: (selectedCategory) {
+          //     setState(() {
+          //       //userCategorySelected = selectedCategory;
+          //     });
+          //   },
+          // ),
           SizedBox(
             height: getSrnHeight(5),
           ),

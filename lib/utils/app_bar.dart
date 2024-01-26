@@ -14,26 +14,23 @@ class _AppBarsState extends State<HomeScreenAppBars> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: getSrnHeight(45),
+        height: getSrnHeight(38),
         width: getOrgSrnWidth(),
         decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(18),
               bottomRight: Radius.circular(18),
             ),
-            color: AppColors.splashBackground),
+            color: AppColors.textWhite),
         child: Column(
           children: <Widget>[
             SizedBox(
-              height: getSrnHeight(22.5),
+              height: getSrnHeight(20),
             ),
             Image.asset(
-              ImagesModel.splashLogo,
+              ImagesModel.horizontalLogo,
               height: getSrnWidth(80),
               width: getSrnHeight(80),
-            ),
-            SizedBox(
-              height: getSrnHeight(3),
             ),
           ],
         ));

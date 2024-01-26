@@ -21,7 +21,7 @@ class _UserLocationState extends State<UserLocation> {
 
   Future<String> getUserLocationHere() async {
     String? address = await getUserLocationLocal();
-    return address ?? "failed";
+    return address ?? "Connection error!";
   }
 
   @override

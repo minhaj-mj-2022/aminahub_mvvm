@@ -20,7 +20,7 @@ class _AdsSectionsState extends State<AdsSections> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<AdsModel>>(
-      future: AdsModelService().getAdsModels(),
+      future: AdsModelService().getAdsModels('All Ads', 'Latest'),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const CircularProgressIndicator();

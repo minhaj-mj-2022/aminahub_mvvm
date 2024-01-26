@@ -3,7 +3,6 @@ import 'package:aminahub/view/home_screen/components/ads_section.dart';
 import 'package:aminahub/view/home_screen/components/floating_btn.dart';
 import 'package:aminahub/view/home_screen/components/search.dart';
 import 'package:aminahub/view/home_screen/components/section_title.dart';
-import 'package:aminahub/view/home_screen/components/Ads_card_section.dart';
 import 'package:aminahub/view/home_screen/components/user_location.dart';
 import 'package:aminahub/utils/app_bar.dart';
 import 'package:aminahub/utils/btm_nav_bar.dart';
@@ -30,9 +29,6 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           children: <Widget>[
             const HomeScreenAppBars(),
-            SizedBox(
-              height: getSrnHeight(2),
-            ),
             UserLocation(),
             SizedBox(
               height: getSrnHeight(6),
@@ -41,19 +37,10 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(
               height: getSrnHeight(10),
             ),
-            const AdsCategory(),
+            AdsCategory(onCategorySelected: (category) {}),
             SizedBox(
               height: getSrnHeight(10),
             ),
-            SpecialSectionTitle(
-              press: () {},
-              title: 'Best Deals for you',
-            ),
-            // AdsCardSectionListView(
-            //   cardHeight: getSrnHeight(58),
-            //   cardWidth: getSrnWidth(1500),
-            //   imgAspectRatio: 10 / 6,
-            // ),
             SpecialSectionTitle(
               press: () {},
               title: 'Special For you',
@@ -67,11 +54,6 @@ class _HomeScreenState extends State<HomeScreen> {
               press: () {},
               title: 'IT Training',
             ),
-            // AdsCardSectionListView(
-            //   cardHeight: getSrnHeight(72),
-            //   cardWidth: getSrnWidth(800),
-            //   imgAspectRatio: 10 / 16,
-            // ),
             SizedBox(
               height: getSrnHeight(10),
             ),

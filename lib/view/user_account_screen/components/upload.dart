@@ -1,7 +1,7 @@
 import 'dart:io';
+import 'package:aminahub/utils/buttons.dart';
 import 'package:aminahub/utils/constant.dart';
 import 'package:aminahub/view_model/user_upload_ads_view_mdl.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -21,7 +21,6 @@ class _UserUploadAdsViewState extends State<UserUploadAdsView> {
   final TextEditingController locationStateController = TextEditingController();
   final TextEditingController contactController = TextEditingController();
 
-  String? originalPoster = FirebaseAuth.instance.currentUser?.email;
   String? selectedCategory;
 
   List<String> imageUrls = [];
@@ -101,6 +100,7 @@ class _UserUploadAdsViewState extends State<UserUploadAdsView> {
               const SizedBox(height: 8.0),
               TextField(
                 controller: descriptionController,
+                maxLines: 4,
                 decoration: const InputDecoration(labelText: 'Descriptions'),
               ),
               const SizedBox(height: 8.0),
@@ -110,9 +110,25 @@ class _UserUploadAdsViewState extends State<UserUploadAdsView> {
                     const InputDecoration(labelText: 'Price (optional)'),
               ),
               const SizedBox(height: 8.0),
-              TextField(
-                controller: locationStateController,
-                decoration: const InputDecoration(labelText: 'Location State'),
+              DropdownButtonFormField<String>(
+                value:
+                    constLocationOptions.contains(locationStateController.text)
+                        ? locationStateController.text
+                        : null,
+                items: constLocationOptions.map((location) {
+                  return DropdownMenuItem<String>(
+                    value: location,
+                    child: Text(location),
+                  );
+                }).toList(),
+                onChanged: (value) {
+                  setState(() {
+                    locationStateController.text = value!;
+                  });
+                },
+                decoration: const InputDecoration(
+                  labelText: 'Location State',
+                ),
               ),
               const SizedBox(height: 8.0),
               TextField(
@@ -150,15 +166,15 @@ class _UserUploadAdsViewState extends State<UserUploadAdsView> {
               const SizedBox(height: 15.0),
               LinearProgressIndicator(value: _uploadProgress),
               const SizedBox(height: 8.0),
-              ElevatedButton(
+              PrimaryBtn(
+                btnText: 'Upload',
                 onPressed: () {
                   _viewModel.uploadData(context);
                   setState(() {
                     _uploadProgress = 0.0;
                   });
                 },
-                child: const Text('Upload'),
-              ),
+              )
             ],
           ),
         ),

@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:aminahub/model/ads_mdl.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -7,8 +5,17 @@ class AdsModelService {
   final CollectionReference adsModelsCollection =
       FirebaseFirestore.instance.collection('ads');
 
-  Future<List<AdsModel>> getAdsModels() async {
-    QuerySnapshot<Object?> querySnapshot = await adsModelsCollection.get();
+  Future<List<AdsModel>> getAdsModels(
+      String userCategorySelected, String filterTime) async {
+    QuerySnapshot<Object?> querySnapshot;
+
+    if (userCategorySelected == "All Ads") {
+      querySnapshot = await adsModelsCollection.get();
+    } else {
+      querySnapshot = await adsModelsCollection
+          .where('category', isEqualTo: userCategorySelected)
+          .get();
+    }
 
     List<AdsModel> adsModels = [];
 
@@ -35,7 +42,15 @@ class AdsModelService {
       );
       adsModels.add(adsModel);
     }
-    adsModels.shuffle(Random());
+
+    // Sort adsModels based on filterTime
+    if (filterTime == 'Oldest') {
+      adsModels.sort((a, b) => a.timePosted.compareTo(b.timePosted));
+    } else {
+      adsModels.sort((a, b) => b.timePosted.compareTo(
+          a.timePosted)); // Default to latest if filterTime is not recognized
+    }
+
     return adsModels;
   }
 }

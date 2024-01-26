@@ -29,7 +29,10 @@ class AppRoutes {
       case homeScreen:
         return (_) => const HomeScreen();
       case viewAllAdsScreen:
-        return (_) => const ViewAllAdsScreen();
+        return (_) => ViewAllAdsScreen(
+              selectedCategory: 'All Ads',
+              selectedTimeFilter: 'Latest',
+            );
       case viewBookmarkScreen:
         return (_) => const ViewBookmarkScreen();
       case userAccountScreen:
