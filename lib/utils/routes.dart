@@ -1,4 +1,5 @@
 import 'package:aminahub/view/home_screen/components/select_location.dart';
+import 'package:aminahub/view/sign_in_screen/sign_in_scrn.dart';
 import 'package:aminahub/view/user_account_screen/components/help_center.dart';
 import 'package:aminahub/view/user_account_screen/components/my_account.dart';
 import 'package:aminahub/view/user_account_screen/components/my_ads.dart';
@@ -21,6 +22,7 @@ class AppRoutes {
   static const String userUploadAds = '/UserUploadAds';
   static const String helpCenter = '/HelpCenter';
   static const String selectLocation = '/SelectLocation';
+  static const String signInScreen = '/SignInScreen';
 
   static WidgetBuilder getRouteBuilder(String routeName) {
     switch (routeName) {
@@ -47,6 +49,8 @@ class AppRoutes {
         return (_) => const HelpCenter();
       case selectLocation:
         return (_) => SelectLocation();
+      case signInScreen:
+        return (_) => const SignInScreen();
       default:
         return (_) {
           return Container(
@@ -70,5 +74,6 @@ class AppRoutes {
     userUploadAds: getRouteBuilder(userUploadAds),
     helpCenter: getRouteBuilder(helpCenter),
     selectLocation: getRouteBuilder(selectLocation),
+    signInScreen: getRouteBuilder(signInScreen),
   };
 }

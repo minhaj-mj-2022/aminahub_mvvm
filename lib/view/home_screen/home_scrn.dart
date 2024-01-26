@@ -8,7 +8,6 @@ import 'package:aminahub/utils/app_bar.dart';
 import 'package:aminahub/utils/btm_nav_bar.dart';
 import 'package:aminahub/utils/buttons.dart';
 import 'package:aminahub/utils/enums.dart';
-import 'package:aminahub/utils/routes.dart';
 import 'package:aminahub/utils/size_config.dart';
 import 'package:aminahub/view/view_all_ads/all_ads.dart';
 import 'package:flutter/material.dart';
@@ -50,13 +49,67 @@ class _HomeScreenState extends State<HomeScreen> {
               cardHeight: getSrnHeight(58),
               cardWidth: getSrnWidth(1500),
               imgAspectRatio: 10 / 6,
+              userCategorySelected: 'All Ads',
+              userSelectedCategoryOption: 'Latest',
+            ),
+            SizedBox(
+              height: getSrnHeight(5),
             ),
             SectionTitle(
               press: () {},
               title: 'IT Training',
             ),
+            AdsSections(
+              cardHeight: getSrnHeight(58),
+              cardWidth: getSrnWidth(1500),
+              imgAspectRatio: 10 / 6,
+              userCategorySelected: 'IT Training',
+              userSelectedCategoryOption: 'Latest',
+            ),
             SizedBox(
-              height: getSrnHeight(10),
+              height: getSrnHeight(5),
+            ),
+            SectionTitle(
+              press: () {},
+              title: 'Property',
+            ),
+            AdsSections(
+              cardHeight: getSrnHeight(58),
+              cardWidth: getSrnWidth(1500),
+              imgAspectRatio: 10 / 6,
+              userCategorySelected: 'Property',
+              userSelectedCategoryOption: 'Latest',
+            ),
+            SizedBox(
+              height: getSrnHeight(5),
+            ),
+            SectionTitle(
+              press: () {},
+              title: 'Events',
+            ),
+            AdsSections(
+              cardHeight: getSrnHeight(58),
+              cardWidth: getSrnWidth(1500),
+              imgAspectRatio: 10 / 6,
+              userCategorySelected: 'Events',
+              userSelectedCategoryOption: 'Latest',
+            ),
+            SizedBox(
+              height: getSrnHeight(5),
+            ),
+            SectionTitle(
+              press: () {},
+              title: 'Home Services',
+            ),
+            AdsSections(
+              cardHeight: getSrnHeight(58),
+              cardWidth: getSrnWidth(1500),
+              imgAspectRatio: 10 / 6,
+              userCategorySelected: ' Home Services',
+              userSelectedCategoryOption: 'Latest',
+            ),
+            SizedBox(
+              height: getSrnHeight(5),
             ),
             PrimaryBtn(
                 btnText: "View all Ads",

@@ -20,7 +20,8 @@ class ViewAllAdsScreen extends StatefulWidget {
 
   @override
   State<ViewAllAdsScreen> createState() =>
-      _ViewAllAdsScreenState(selectedCategory); // Updated
+      // ignore: no_logic_in_create_state
+      _ViewAllAdsScreenState(selectedCategory);
 }
 
 class _ViewAllAdsScreenState extends State<ViewAllAdsScreen> {

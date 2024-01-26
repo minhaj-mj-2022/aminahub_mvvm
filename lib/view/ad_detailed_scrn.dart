@@ -3,7 +3,8 @@ import 'package:aminahub/utils/size_config.dart';
 import 'package:flutter/material.dart';
 
 class AdDetailsScreen extends StatelessWidget {
-  final String title,
+  final String id,
+      title,
       imageUrl,
       adsCategory,
       locationState,
@@ -22,6 +23,7 @@ class AdDetailsScreen extends StatelessWidget {
     required this.isActive,
     required this.category,
     required this.description,
+    required this.id,
   });
 
   @override
@@ -126,16 +128,23 @@ class AdDetailsScreen extends StatelessWidget {
                     height: getSrnHeight(12),
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: getSrnWidth(150)),
+                    padding: EdgeInsets.symmetric(horizontal: getSrnWidth(160)),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        const Text("Ad Status"),
+                        const Text(
+                          "Ad Status:",
+                          style: TextStyle(fontSize: 15),
+                        ),
+                        SizedBox(
+                          width: getSrnWidth(126),
+                        ),
                         Row(
                           children: [
                             const Text(
                               "Active",
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                              style: TextStyle(
+                                  fontSize: 15, fontWeight: FontWeight.bold),
                             ),
                             SizedBox(width: getSrnWidth(8)),
                             Icon(
@@ -148,14 +157,21 @@ class AdDetailsScreen extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: getSrnWidth(150)),
+                    padding: EdgeInsets.symmetric(horizontal: getSrnWidth(160)),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        const Text("Ad Category"),
+                        const Text(
+                          "Ad Category:",
+                          style: TextStyle(fontSize: 15),
+                        ),
+                        SizedBox(
+                          width: getSrnWidth(90),
+                        ),
                         Text(
                           category,
-                          style: const TextStyle(fontWeight: FontWeight.bold),
+                          style: const TextStyle(
+                              fontSize: 15, fontWeight: FontWeight.bold),
                         ),
                       ],
                     ),

@@ -1,4 +1,5 @@
 import 'package:aminahub/utils/size_config.dart';
+import 'package:aminahub/view/view_all_ads/all_ads.dart';
 import 'package:flutter/material.dart';
 
 class SearchField extends StatefulWidget {
@@ -44,7 +45,15 @@ class _SearchFieldState extends State<SearchField> {
               item.toLowerCase().contains(textEditingValue.text.toLowerCase()));
         },
         onSelected: (String item) {
-          //navigateToNewScreen(item);
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ViewAllAdsScreen(
+                selectedCategory: item,
+                selectedTimeFilter: 'Latest',
+              ),
+            ),
+          );
         },
         fieldViewBuilder: (context, controller, focusNode, onFieldSubmitted) {
           return TextField(

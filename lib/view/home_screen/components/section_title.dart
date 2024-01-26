@@ -1,4 +1,5 @@
 import 'package:aminahub/utils/size_config.dart';
+import 'package:aminahub/view/view_all_ads/all_ads.dart';
 import 'package:flutter/material.dart';
 
 class SectionTitle extends StatelessWidget {
@@ -26,7 +27,17 @@ class SectionTitle extends StatelessWidget {
                 fontWeight: FontWeight.bold),
           ),
           GestureDetector(
-            onTap: press,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ViewAllAdsScreen(
+                    selectedCategory: title,
+                    selectedTimeFilter: 'Latest',
+                  ),
+                ),
+              );
+            },
             child: const Text(
               "See More",
               style: TextStyle(color: Color(0xFFFAAB37)),
@@ -63,7 +74,17 @@ class SpecialSectionTitle extends StatelessWidget {
                 fontWeight: FontWeight.bold),
           ),
           GestureDetector(
-            onTap: press,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ViewAllAdsScreen(
+                    selectedCategory: 'All Ads',
+                    selectedTimeFilter: 'Latest',
+                  ),
+                ),
+              );
+            },
             child: const Text(
               "Sell All",
               style: TextStyle(color: Color(0xFFFAAB37)),

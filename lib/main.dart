@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         home: const SplashScreen(),
-        initialRoute: AppRoutes.splashScreen,
+        initialRoute: AppRoutes.signInScreen,
         routes: AppRoutes.routes,
       ),
     );

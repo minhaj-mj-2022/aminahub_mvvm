@@ -42,7 +42,8 @@ class _GridViweCardState extends State<GridViweCard> {
                   builder: (context) => AdDetailsScreen(
                     imageUrl: ad.images[0],
                     title: ad.title,
-                    adsCategory: "category",
+                    id: ad.id,
+                    adsCategory: ad.category,
                     locationState: ad.locationState,
                     timePosted: ad.timePosted,
                     isActive: ad.isActive,
